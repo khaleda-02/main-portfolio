@@ -5,9 +5,27 @@ let resume = document.querySelector("#resume");
 let skills = document.querySelector("#skills");
 let works = document.querySelector("#works");
 let contact = document.querySelector("#contact");
+let menu = document.querySelector(".menu");
+let links = document.querySelector("nav .links");
+let linksAnchors = document.querySelectorAll("nav .links a");
+let menuToggle = 0;
 
-
-console.log(contact);
+console.log(linksAnchors);
+menu.onclick = function () {
+  if (menuToggle == 0) {
+    links.style.left = "0%";
+    menuToggle++;
+    linksAnchors.forEach(function (anchor) {
+      anchor.onclick = function () {
+        links.style.left = "-100%";
+        menuToggle = 0;
+      };
+    });
+  } else {
+    links.style.left = "-100%";
+    menuToggle = 0;
+  }
+};
 
 window.onscroll = function () {
   console.log(scrollY);

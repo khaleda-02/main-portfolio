@@ -50,7 +50,7 @@ ul {
 
 @media (min-width: 768px) {
     .container {
-        width: 750px ;
+        width: 750px;
     }
 }
 
@@ -145,6 +145,7 @@ nav.show {
 
 nav .links {
     width: fit-content;
+    max-width: 100%;
     margin: auto;
 }
 
@@ -160,6 +161,43 @@ nav .links a {
 
 nav .links a.active {
     color: var(--orange-color);
+}
+
+nav .menu {
+    color: var(--white-color);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    display: none;
+}
+
+@media (max-width : 548px) {
+    nav .links a {
+        font-size: 18px;
+        margin: 20px 10px;
+        display: block;
+        text-align: center;
+        padding: 10px;
+    }
+
+    nav {
+        background-color: var(--text-black-color) !important;
+    }
+
+    nav .links {
+        transition: 0.4s;
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        left: -100%;
+        background-color: var(--text-black-color) !important;
+    }
+
+    nav .menu {
+        display: block;
+    }
 }
 
 /* start home  */
@@ -251,13 +289,42 @@ nav .links a.active {
     font-size: 45px;
 }
 
+@media (max-width : 1071px) {
+    .home h1 {
+        max-width: 100%;
+    }
+}
+
+@media (max-width : 1015px) {
+    .home h1 {
+        max-width: 100%;
+        font-size: 70px !important;
+    }
+
+    .home p {
+        max-width: 70%;
+        font-size: 17px !important;
+    }
+}
+
+@media (max-width : 528px) {
+    .home h1 {
+        max-width: 100%;
+        font-size: 40px !important;
+    }
+
+    .home p {
+        max-width: 50%;
+        font-size: 17px !important;
+    }
+}
 /* start about  */
 
 .about {
     background-color: var(--gray-color);
     padding: var(--main-padding);
     color: var(--white-gray-color);
-    width: 100%;
+    max-width: 100%;
 }
 
 .about .container {
@@ -302,6 +369,7 @@ nav .links a.active {
     text-transform: capitalize;
     font-weight: 700;
     border-radius: 10px;
+    text-decoration: none;
 
 }
 
@@ -312,6 +380,42 @@ nav .links a.active {
 .about img {
     width: 100%;
     border-radius: 50%;
+}
+
+@media (max-width : 1265px) {
+    .about {
+        max-width: 100%;
+    }
+
+    .about .container {
+        max-width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width : 789px) {
+    .about {
+        max-width: 100%;
+    }
+
+    .about .container .info p {
+        font-size: 20px;
+        align-items: center;
+    }
+
+    .about .container .info .inner-info {
+        flex-direction: column;
+    }
+}
+
+@media (max-width : 676px) {
+    .about {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
 }
 
 /* start education  */
@@ -330,9 +434,12 @@ nav .links a.active {
     padding-bottom: 50px;
 }
 
+
+
 /* start pro  */
 .projects {
     width: 100%;
+    padding: var(--main-padding);
 }
 
 .projects .container {
@@ -369,6 +476,7 @@ nav .links a.active {
     color: var(--text-black-color);
     font-size: 18px;
     font-weight: 700;
+    letter-spacing: 2px;
 }
 
 .skills .load {
@@ -388,7 +496,7 @@ nav .links a.active {
     position: relative;
     width: 100%;
     height: 5vh;
-    background-color: var(--back-white-color);
+    background-color: #d1d0d0;
     border-radius: 5px;
 }
 
@@ -406,7 +514,7 @@ nav .links a.active {
 }
 
 .progress-div.web span {
-    width: 90%;
+    width: 95%;
 }
 
 .progress-div.java span {
@@ -414,7 +522,19 @@ nav .links a.active {
 }
 
 .progress-div.git span {
-    width: 70%;
+    width: 77%;
+}
+
+.progress-div.data-base span {
+    width: 80%;
+}
+
+.progress-div.data-structure span {
+    width: 60%;
+}
+
+.progress-div.design-pattern span {
+    width: 85%;
 }
 
 .progress-div.php span {
@@ -482,7 +602,6 @@ nav .links a.active {
 /* start contact */
 .contact {
     padding: var(--main-padding);
-    height: 100vh;
     background-color: var(--gray-color);
 }
 
@@ -631,12 +750,103 @@ nav .links a.active {
     color: rgb(255, 25, 25)
 }
 
-.footer > a {
+.footer>a {
     text-decoration: none;
     color: var(--white-gray-color);
     font-size: 50px;
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+}
+
+
+/* -------------------------------------------- */
+@media (max-width : 1101px) {
+
+    .education,
+    .skills,
+    .projects,
+    .contact,
+    .education,
+    .footer {
+        /* padding-left: 0px;
+        padding-right: 0; */
+        max-width: 100%;
+    }
+
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 50px;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .footer .container {
+        align-items: center;
+    }
+    .contact .container{
+        align-items: flex-start;
+    }
+    .info {
+        min-width: 100% !important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sub-heading {
+        font-size: 26px;
+    }
+
+    .info-details {
+        font-size: 18px;
+        line-height: 1.9rem;
+        max-width: var(--p-width);
+        width: 100%;
+    }
+
+    .progress-div {
+        width: 100%;
+    }
+
+    .other .container {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .extra-heading {
+        width: 100%;
+    }
+
+    .contact .form .icon {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+        margin: 30px 0;
+    }
+    .contact .form {
+        min-width: 100%;
+    }
+    .contact .form .icon input, .contact .form .icon textarea {
+        background-color: var(--text-black-color);
+        width: 100%;
+        height: 6vh;
+        border: none;
+    }
+}
+
+@media (max-width : 640px) {
+    .education,
+    .skills,
+    .projects,
+    .contact,
+    .education,
+    .footer {
+        padding-left: 0px;
+        padding-right: 0;
+    }
 }
