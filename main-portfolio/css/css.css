@@ -344,6 +344,8 @@ nav .menu {
 .about .container .info p {
     color: var(--white-gray-color);
     margin: 20px 0;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 .about .container .info .inner-info {
@@ -510,7 +512,7 @@ nav .menu {
 
 
 .progress-div.javascript span {
-    width: 75%;
+    width: 85%;
 }
 
 .progress-div.web span {
@@ -542,7 +544,7 @@ nav .menu {
 }
 
 .progress-div.reactjs span {
-    width: 20%;
+    width: 70%;
 }
 
 /* start other works */

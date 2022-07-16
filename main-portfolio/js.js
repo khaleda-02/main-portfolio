@@ -38,10 +38,7 @@ window.onscroll = function () {
     nav.style.display = "block";
     nav.classList.add("show");
   } else {
-    // nav.style.display = "block";
-    // nav.classList.remove("show");
   }
-  // 1093
   if (scrollY >= 0 && scrollY <= 1085) {
     home.classList.add("active");
     about.classList.remove("active");
@@ -85,10 +82,44 @@ window.onscroll = function () {
     skills.classList.remove("active");
     works.classList.remove("active");
   }
-
-  // let menu = document.querySelectorAll(".footer .container .links>a");
-  // for (let index = 0; index < menu.length; index++) {
-  //   menu[index].style.cssText = "font-size :20px !important";
-  //   menu[index].style.fontSize ="10px";
-  // }
 };
+
+function solution(phone_numbers, phone_owners, number) {
+  let state = false;
+  for (let i = 0; i < phone_numbers.length; i++) {
+    if(number == phone_numbers[i]){
+      state = false;
+      return phone_owners[i];
+    }else{
+      state =true;
+    }
+  }
+  if(state){
+    return number;
+  }
+ 
+  if(phone_numbers.includes(number)){
+    for (let i = 0; i < phone_numbers.length; i++) {
+      if(number == phone_numbers[i]){
+        return phone_owners[i];
+      }
+    }
+  }else{
+    return number;
+  }
+}
+
+
+function solution(A) {
+  // (n & 3) == 0
+  let arr = A;
+  arr.sort().reverse();
+  // console.log(arr)
+  for (let i = 0; i < arr.length; i++) {
+    if((arr[i] & 3) == 0){
+      return arr[i];
+      break;
+    }
+  }
+}
+
